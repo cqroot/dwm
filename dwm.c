@@ -43,6 +43,7 @@
 
 #include "drw.h"
 #include "util.h"
+#include "autostart.h"
 
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
@@ -2158,6 +2159,7 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
+	RunAutoStart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
